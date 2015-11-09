@@ -1,18 +1,24 @@
 package com.cxyliuyu.www.snoredetection;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    Button startButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //github怎么用啊
+        startButton = (Button)findViewById(R.id.main_btn_start);
+        startButton.setOnClickListener(new StartOnClickListenner());
     }
 
     @Override
@@ -35,5 +41,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    class StartOnClickListenner implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            //开始按钮被点击了
+
+        }
     }
 }
